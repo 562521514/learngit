@@ -6,7 +6,7 @@ const porduct=require('./product');
 const shoppingCart=require('./shoppingCart');
 
 var app=express();
-http.createServer(app).listen(9000);
+http.createServer(app).listen(5050);
 
 app.use(express.static('public'));
 app.use('/',(req,res,next)=>{
