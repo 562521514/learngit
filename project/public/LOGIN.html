@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/LOGIN.css"/>
+</head>
+<body>
+<div id="logo">
+    <img src="img1/logo-new_294da7f.png" alt="logo"/>
+</div>
+<div id="main">
+    <div id="loginForm">
+        <div>
+            <a href="javascript:actLogin()">账号登录</a>
+            <span></span>
+            <a href="javascript:vftCodeLogin()">验证码登录</a>
+        </div>
+        <form id="act">
+            <input type="text" name="uname" placeholder="请输入手机号" value="13247296728"/>
+            <span>账号错误</span>
+            <input type="password" name="upwd" placeholder="6-10位密码" value="123456"/>
+            <span>密码错误</span>
+            <br/>
+            <b>W2f9</b>
+            <input type="text" class="vft" value="w2f9"/>
+            <span>验证码错误</span>
+            <br/>
+            <label>
+                <input type="checkbox"/>记住登录状态
+            </label><br/>
+            <input id="login" type="button" value="登录"/>
+        </form>
+        <form action="" id="vft">
+            <input type="text" placeholder="请输入手机号"/>
+            <span>请输入正确的手机号</span>
+            <input type="text" class="vft"/>
+            <button>获取验证码</button>
+        </form>
+        <div>
+            <a href="#">注册</a>
+            <a href="#">忘记密码？</a>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+//    验证用户名 密码 验证码
+var form1=document.querySelector("#act");
+var form2=document.querySelector("#vft");
+    var uname=document.querySelector("input[name='uname']");
+    var upwd=document.querySelector("input[name='upwd']");
+    var regUname=/^1[34578]\d{9}$/;
+    var regPwd=/^\w{6,10}$/;
+   var b=document.querySelector("#act>b");
+    var vft=document.querySelector("#act .vft");
+    uname.onfocus=focus;
+    uname.onblur=blur;
+    upwd.onfocus=focus;
+    upwd.onblur=blur;
+vft.onfocus=focus;
+vft.onblur=blur;
+    function focus(){
+        this.nextElementSibling.className="";
+    }
+
+    function blur(reg){
+        if(this==uname){
+            reg=regUname;
+            if(reg.test(this.value)){
+                this.nextElementSibling.className="right";
+
+            }
+            else{
+                this.nextElementSibling.className="false";
+
+            }
+        }else if(this==upwd){
+            reg=regPwd;
+            if(reg.test(this.value)){
+                this.nextElementSibling.className="right";
+
+            }
+            else{
+                this.nextElementSibling.className="false";
+
+            }
+        }else if(this==vft){
+            if(this.value.toLowerCase()== b.innerHTML.toLowerCase()){
+                this.nextElementSibling.className="right";
+
+            }
+            else{
+                this.nextElementSibling.className="false";
+
+            }
+        }
+    }
+//点击刷新验证码
+var chars=[];
+for(var c=48;c<=57;c++)
+chars.push(String.fromCharCode(c));
+for(var c=65;c<=90;c++)
+    chars.push(String.fromCharCode(c));
+for(var c=97;c<=122;c++)
+    chars.push(String.fromCharCode(c));
+b.onclick=getCode;
+function getCode(){
+    for(var i= 0,code="";i<4;i++){
+        var r=parseInt(Math.random()*62);
+        code+=chars[r];
+    }
+    b.innerHTML=code;
+}
+
+
+login.onclick=function(e){
+    var vali=(vft.value.toLowerCase())==(b.innerHTML.toLowerCase());
+    if(!(regUname.test(uname.value)&&regPwd.test(upwd.value)&&vali)){
+        e.preventDefault();
+    }else{
+        $.ajax({
+            type:'POST',
+            url:'user/login',
+            data:{uname:uname.value,upwd:upwd.value},
+            success:function(result){
+                if(result.code){
+                    alert('用户名或密码错误')
+                }else{
+                    sessionStorage['uid']=result[0].uid;
+                    sessionStorage['uname']=result[0].uname;
+                    location.href='detail.html';
+                }
+
+            }
+        })
+    }
+
+};
+//   切换 账号登录
+
+    var a1=document.querySelector("#loginForm>div:first-child>a:first-child");
+    var a2=document.querySelector("#loginForm>div:first-child>a:last-child");
+    function actLogin(){
+        a1.style.color="#48AFE9";
+        a2.style.color="#666";
+        form1.style.display="block";
+        form2.style.display="none";
+    }
+    //   切换 验证码登录
+    function vftCodeLogin(){
+        a2.style.color="#48AFE9";
+        a1.style.color="#666";
+        form1.style.display="none";
+        form2.style.display="block";
+    }
+    var phoneNum=document.querySelector("#vft>input:first-child");
+    phoneNum.onfocus=focus;
+    phoneNum.onblur=blur;
+</script>
+</body>
+</html>

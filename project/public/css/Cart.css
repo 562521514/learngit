@@ -1,0 +1,78 @@
+#footer {
+    background: #fafafa;
+}
+#footInner {
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+#footInner ul li:first-child {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #666 ;
+}
+#footInner ul a {
+    text-decoration: none;
+    color: #666;
+    padding: 5px 0;
+}
+#footInner ul a:hover {
+    color: #00c3f5;
+}
+#footInner div {
+    text-align: right;
+}
+#footInner div span {
+    color: #999;
+    line-height: 25px;
+}
+#footInner div p {
+    color: #666 ;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#header{
+    width:60%;
+    margin:0 auto;
+}
+#header img{
+    width:200px;
+}
+#section{
+    width:60%;
+    margin:0 auto;
+}
+#section table{
+    width:100%;
+    text-align: center;
+}
+img{
+    vertical-align: middle;
+    width:60px;
+}
+#section table button{
+    border-radius: 5px;
+    width:100px;
+    background: #fff;
+    border:1px solid #aaa;
+}
+.count b{
+    display: inline-block;
+    border:1px solid #aaa;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+}
+.count span{
+    display: inline-block;
+    border: 1px solid #aaa;
+    width:50px;
+    height:30px;
+    line-height: 30px;
+}

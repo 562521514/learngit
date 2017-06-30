@@ -1,0 +1,517 @@
+body,
+ul,
+li,
+ol,
+p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #00C3F5;
+}
+img {
+  vertical-align: bottom;
+}
+#header {
+  height: 50px;
+  background: #FAFAFC;
+}
+#header > div {
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+}
+#header > div ul {
+  display: flex;
+}
+#header > div ul a {
+  display: inline-block;
+  height: 100%;
+  padding: 0 10px;
+  line-height: 50px;
+}
+#header > div ol {
+  display: flex;
+}
+#header > div ol a {
+  display: inline-block;
+  height: 100%;
+  padding: 0 10px;
+  line-height: 50px;
+}
+#nav {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav img {
+  margin-right: 10%;
+}
+#nav > div {
+  width: 40%;
+  height: 31px;
+  border-radius: 5px;
+  background: #00c3f5;
+  position:relative;
+}
+#nav > div>ul{
+  position: absolute;
+  border:1px solid #ddd;
+  padding:5px;
+  z-index: 1000;
+  cursor: pointer;
+  display: none;
+}
+#nav > div input {
+  outline: none;
+  width: 80%;
+  height: 25px;
+  border-radius: 5px;
+  border: 2px solid #00c3f5;
+}
+#nav > div button {
+  background: #00c3f5;
+  border: none;
+  width: 15%;
+  color: #fff;
+  font-weight: bold;
+}
+#nav > div button:hover {
+  cursor: pointer;
+}
+#banner > div {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+}
+#allProduct {
+  width: 25%;
+}
+#allProduct > ul {
+  background: #F5F4F4;
+  padding: 10px 10px;
+  position: relative;
+}
+#allProduct > ul > li > a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 10px 10px;
+  position: relative;
+  left: 1px;
+  z-index: 10;
+}
+#allProduct > ul > li > div {
+  width: 200%;
+  display: none;
+  height: 300px;
+  border: 1px solid #F5F4F4;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  padding: 10px 50px;
+  background: #fff;
+  opacity: 0.9;
+}
+#allProduct > ul > li > div li {
+  float: left;
+  padding: 10px;
+}
+#allProduct .visible {
+  display: block;
+  z-index: 5;
+}
+.a_mouseover {
+  background: #fff;
+  color: #00c3f5;
+}
+#slider {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+#slider img {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.5s linear;
+}
+#slider a {
+  position: absolute;
+  top: 45%;
+  background: #00c3f5;
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "����";
+}
+#slider a + a {
+  right: 0;
+}
+#slider > ul {
+  position: absolute;
+  bottom: 2%;
+  left: 45%;
+  display: flex;
+  width: 10%;
+  justify-content: space-around;
+}
+#slider > ul li {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #ddd;
+  font-size: 0;
+}
+#slider .show {
+  z-index: 0;
+  opacity: 1;
+}
+#slider .circle {
+  background: #00c3f5;
+}
+#smallAd {
+  margin-top: 10px;
+}
+#smallAd ul {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+#smallAd ul li {
+  width: 244px;
+}
+#smallAd ul li:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  background: #F5F4F4;
+  overflow: hidden;
+  height: 140px;
+}
+#smallAd ul li:first-child p {
+  display: flex;
+  width: 100%;
+}
+#smallAd ul li:first-child a {
+  width: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 0.9em;
+}
+#hot {
+  width: 70%;
+  margin: 20px auto;
+}
+#hot > img {
+  width: 100%;
+}
+#hotHeader {
+  display: flex;
+}
+#hotHeader h3 {
+  flex-grow: 1;
+  margin: 0;
+}
+#hotHeader a {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #999;
+  margin-left: 10px;
+  text-align: center;
+  line-height: 52px;
+}
+#hotHeader a i {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  background: #999;
+}
+#hotProduct {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  margin-bottom: 30px;
+}
+#hotProduct ul {
+  position: absolute;
+  left: 0;
+  display: flex;
+  width: 200%;
+  transition: left 1s linear;
+  height: 100%;
+}
+#hotProduct ul li {
+  flex-grow: 1;
+  text-align: center;
+  border: 1px solid #eee;
+  transition: all .5s linear;
+}
+#hotProduct ul li h4 {
+  margin: 0;
+  padding: 10px 0;
+}
+#hotProduct ul li p {
+  color: #999999;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+#hotProduct ul li span {
+  color: #F14361;
+  font-weight: 600;
+}
+#hotProduct ul li:hover {
+  border-color: #999;
+}
+#section {
+  background: #F5F5F5;
+  padding-top: 50px;
+}
+#section > div {
+  width: 70%;
+  margin: 0 auto;
+}
+#section > ul {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 100%;
+}
+#section > ul li {
+  position: relative;
+  top: 0;
+  width: 19%;
+  height: 310px;
+  text-align: center;
+  background: #fff;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: all .3s;
+}
+#section > ul li h4 {
+  margin: 0;
+  padding: 10px 0;
+}
+#section > ul li p {
+  color: #999999;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+#section > ul li span {
+  color: #F14361;
+  font-weight: 600;
+}
+#section > ul li:first-child {
+  position: relative;
+}
+#section > ul li:first-child div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 100px;
+  transition: height .5s ;
+}
+#section > ul li:first-child div a {
+  display: inline-block;
+  line-height: 30px;
+  width: 50%;
+  height: 30px;
+  background: #F14361 ;
+  border-radius: 5px;
+  color: #fff;
+}
+#section > ul li:first-child img {
+  width: 100%;
+}
+#section > ul li:first-child:hover > div {
+  height: 100px;
+}
+#section > ul li:first-child ~ li:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  top: -2px;
+  z-index: 2;
+}
+#footer {
+  background: #fafafa;
+}
+#footInner {
+  width: 70%;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+#footInner ul li:first-child {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #666 ;
+}
+#footInner ul a {
+  text-decoration: none;
+  color: #666;
+  padding: 5px 0;
+}
+#footInner ul a:hover {
+  color: #00c3f5;
+}
+#footInner div {
+  text-align: right;
+}
+#footInner div span {
+  color: #999;
+  line-height: 25px;
+}
+#footInner div p {
+  color: #666 ;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.warp {
+  position: relative;
+  width: 200px;
+}
+#test > ul {
+  padding: 15px 0;
+  margin: 0;
+  list-style: none;
+  color: #666;
+  border-right-width: 0;
+  background: #F5F4F4;
+}
+#test > ul > li {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  position: relative;
+}
+#test > ul > li.active {
+  background-color: #fff;
+}
+.none {
+  display: none;
+}
+#sub {
+  width: 600px;
+  position: absolute;
+  border: 1px solid #f7f7f7;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  left: 200px;
+  top: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0;
+  z-index: 10005;
+  background: #fff;
+}
+.sub_content a {
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+.sub_content dd a {
+  border-left: 1px solid #e0e0e0;
+  padding: 0 10px;
+  margin: 4px 0;
+}
+.sub_content dl {
+  overflow: hidden;
+}
+.sub_content dt {
+  float: left;
+  font-weight: bold;
+  clear: left;
+  width: 70px;
+  position: relative;
+}
+.sub_content dd {
+  float: left;
+  margin-left: 5px;
+  border-top: 1px solid #eee;
+  margin-bottom: 5px;
+}
+.sub_content dt i {
+  width: 4px;
+  height: 14px;
+  font: 400 9px/14px consolas;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.affix {
+  position: fixed;
+  left: 20px;
+  top: 200px;
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+}
+.affix li {
+  height: 50px;
+  line-height: 50px;
+  padding: 10px;
+  border-radius: 5px;
+}
+.affix li a {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.affix .active {
+  background: #00c3f5;
+}
+.affix .active a {
+  color: #fff;
+}
+.pages{
+  float:right;
+  text-align: center;
+}
+.pages li{
+  border:1px solid #666;
+  background: #fff;
+  display:inline-block;
+  width:20px;
+  cursor: pointer;
+  margin-right:10px;
+  border-radius: 3px;
+}
+.pages li.active{
+  border-color:transparent;
+}
+.addCart{
+  background: #fff;
+  border:1px solid #00c3f5;
+  border-radius: 5px;
+  height:25px;
+  cursor:pointer;
+  color:#F14361;
+  font-weight: bold;
+}
+.addCart:hover{
+  background:#00c3f5;
+  color:#fff;
+}
